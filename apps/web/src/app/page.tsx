@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const steps = [
-  { step: "1", label: "Source", sub: "One URL" },
-  { step: "2", label: "Agents", sub: "Live run" },
-  { step: "3", label: "Submit", sub: "Gmail ready" },
+  { step: "1", label: "Source", sub: "MMS case" },
+  { step: "2", label: "Trace", sub: "Mock agents" },
+  { step: "3", label: "Report", sub: "Takedown" },
 ];
 
 export default function Page() {
@@ -22,13 +22,13 @@ export default function Page() {
       <main className="mx-auto max-w-3xl px-6 py-16">
         <div className="mb-10 text-center">
           <p className="mb-4 font-mono text-[11px] uppercase tracking-widest text-rose-500">
-            Agentic NCII response
+            MMS leak response
           </p>
           <h1 className="serif-title mx-auto mb-4 max-w-2xl text-4xl leading-snug text-[#0a0a0a]">
-            Sniffer-style evidence, agentic takedown execution.
+            Sniffer-style investigation, agentic takedown execution.
           </h1>
           <p className="mx-auto max-w-xl text-[14px] leading-7 text-[#6b7280]">
-            Paste one leak source. LeakOps fetches the evidence image, scans the takedown registry, drafts the notice, and opens Gmail with the packet ready.
+            A mock-first MMS flow: record the source, upload evidence, watch agents trace platforms, then file a Gmail-ready takedown packet.
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export default function Page() {
 
         <div className="flex flex-col gap-4">
           <Link
-            href="/new"
+            href="/start"
             className="group relative block rounded-2xl border border-[#e8e4de] bg-white p-7 transition-all hover:border-rose-400 hover:shadow-[0_0_0_3px_rgba(244,63,94,0.07)]"
           >
             <div className="flex items-start gap-5">
@@ -71,17 +71,17 @@ export default function Page() {
               <div className="min-w-0 flex-1">
                 <div className="mb-1.5 flex items-center gap-2.5">
                   <p className="text-[17px] font-semibold tracking-tight text-[#0a0a0a]">
-                    Start takedown command
+                    Start MMS investigation
                   </p>
                   <span className="shrink-0 rounded-full border border-rose-100 bg-rose-50 px-2 py-0.5 font-mono text-[9.5px] uppercase tracking-wider text-rose-600">
                     Urgent
                   </span>
                 </div>
                 <p className="mb-4 text-[13.5px] leading-relaxed text-[#6b7280]">
-                  The only required input is the leak URL. Agents handle evidence, route intelligence, notice drafting, and submission prep.
+                  Full Sniffer-style flow with source selection, upload, live mock scan, report, supported platforms, and takedown actions.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {["Image fetch", "Route discovery", "Gmail submission"].map((feature) => (
+                  {["MMS only", "Route registry", "Gmail submission"].map((feature) => (
                     <span key={feature} className="rounded-full border border-[#e8e4de] bg-[#fafaf8] px-2.5 py-1 font-mono text-[11px] text-[#6b7280]">
                       {feature}
                     </span>
@@ -98,7 +98,7 @@ export default function Page() {
           </Link>
 
           <Link
-            href="/case/demo-001"
+            href="/report/LO-23891"
             className="group relative block rounded-2xl border border-dashed border-[#e8e4de] bg-[#fafaf8] p-5 transition-all hover:border-[#9ca3af] hover:bg-white"
           >
             <div className="flex items-start gap-4">
@@ -117,6 +117,31 @@ export default function Page() {
                 </div>
                 <p className="text-[12px] leading-relaxed text-[#9ca3af]">
                   Skip the agent run and inspect a populated report.
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/supported-platforms"
+            className="group relative block rounded-2xl border border-dashed border-[#e8e4de] bg-[#fafaf8] p-5 transition-all hover:border-[#9ca3af] hover:bg-white"
+          >
+            <div className="flex items-start gap-4">
+              <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-[#e8e4de] bg-white">
+                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="#9ca3af" strokeWidth="1.75">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="mb-1 flex items-center gap-2.5">
+                  <p className="text-[13.5px] font-semibold tracking-tight text-[#374151]">Supported platforms</p>
+                  <span className="rounded-full border border-[#e8e4de] bg-[#f0ede8] px-2 py-0.5 font-mono text-[9.5px] uppercase tracking-wider text-[#6b7280]">
+                    CSV
+                  </span>
+                </div>
+                <p className="text-[12px] leading-relaxed text-[#9ca3af]">
+                  Browse the takedown registry used by the Route Agent.
                 </p>
               </div>
             </div>
