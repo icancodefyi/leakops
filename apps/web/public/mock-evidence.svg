@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="960" viewBox="0 0 960 960">
+  <rect width="960" height="960" fill="#fafaf8"/>
+  <rect x="120" y="96" width="720" height="768" rx="36" fill="#ffffff" stroke="#e8e4de" stroke-width="2"/>
+  <rect x="172" y="156" width="616" height="96" rx="20" fill="#0a0a0a"/>
+  <circle cx="220" cy="204" r="18" fill="#f43f5e"/>
+  <rect x="260" y="190" width="218" height="14" rx="7" fill="#ffffff" opacity="0.82"/>
+  <rect x="260" y="216" width="132" height="10" rx="5" fill="#ffffff" opacity="0.42"/>
+  <rect x="172" y="308" width="616" height="360" rx="28" fill="#f5f3f0" stroke="#e8e4de" stroke-width="2"/>
+  <path d="M218 600L356 456L454 552L538 474L742 668H218Z" fill="#d4cfc9"/>
+  <circle cx="650" cy="414" r="48" fill="#c4bdb5"/>
+  <rect x="172" y="710" width="296" height="18" rx="9" fill="#374151"/>
+  <rect x="172" y="748" width="462" height="14" rx="7" fill="#9ca3af"/>
+  <rect x="172" y="780" width="380" height="14" rx="7" fill="#c4bdb5"/>
+  <rect x="610" y="724" width="178" height="52" rx="26" fill="#fff1f2" stroke="#fecdd3" stroke-width="2"/>
+  <text x="699" y="756" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#e11d48">SOURCE</text>
+</svg>
