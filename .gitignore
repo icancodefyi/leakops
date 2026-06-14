@@ -18,6 +18,11 @@ node_modules/
 /.next/
 /out/
 
+# env
+.env
+.env.local
+.env.*.local
+
 # production
 /build
 
