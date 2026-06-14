@@ -372,6 +372,7 @@ export default function ChatPage() {
   const [fetchState, setFetchState] = useState<"idle" | "loading" | "ready" | "failed">("idle");
   const [evidence, setEvidence] = useState<EvidenceItem[]>([]);
   const [showEvidence, setShowEvidence] = useState(false);
+  const [visualFingerprint, setVisualFingerprint] = useState("");
   const chatEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -418,6 +419,7 @@ export default function ChatPage() {
   }
 
   function handleScanComplete(fingerprint: string, matches: string[]) {
+    setVisualFingerprint(fingerprint);
     addEvidence({ type: "fingerprint", detail: `Visual fingerprint generated: FP-${fingerprint}`, timestamp: new Date() });
     for (const m of matches) {
       addEvidence({ type: "finding", platform: m, detail: `Content found on ${m}`, timestamp: new Date() });
@@ -530,7 +532,7 @@ export default function ChatPage() {
           sourceUrl: sourceUrl || undefined,
           sourceDomain: host || undefined,
           evidenceDescription: previewUrl
-            ? "Evidence image was submitted by the user for analysis."
+            ? `Evidence image submitted. Visual fingerprint: FP-${visualFingerprint || "unknown"}. Monitoring active for re-uploads.`
             : undefined,
           caseRef,
         }),
