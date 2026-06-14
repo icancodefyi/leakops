@@ -6,8 +6,13 @@ settings:
 
 importers:
 
-  .:
+  .: {}
+
+  apps/web:
     dependencies:
+      '@leakops/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       next:
         specifier: 16.2.9
         version: 16.2.9(@babel/core@7.29.7)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -42,6 +47,14 @@ importers:
       typescript:
         specifier: ^5
         version: 5.9.3
+
+  packages/shared: {}
+
+  services/evidence: {}
+
+  services/orchestrator: {}
+
+  services/route-discovery: {}
 
 packages:
 

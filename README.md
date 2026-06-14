@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LeakOps
 
-## Getting Started
+LeakOps is an agentic incident-response platform for NCII takedowns. The product takes a source link or evidence image and turns it into a case workspace with evidence preservation, route discovery, urgent action priority, and submission-ready takedown output.
 
-First, run the development server:
+## Product flow
+
+1. `Report`
+   Submit a leaked intimate-content link or supporting evidence image.
+2. `Investigate`
+   Run intake, evidence, platform detection, and route discovery agents against the takedown-route CSV.
+3. `Prepare`
+   Generate route details, required fields, notices, urgent actions, and escalation copy.
+4. `Respond`
+   Open the discovered route, submit the report, and track follow-up actions.
+
+## Monorepo structure
+
+- `apps/web`
+  Next.js operator UI with the landing page, intake workspace, and case workspace.
+- `services/orchestrator`
+  FastAPI service for case state, sequencing, and agent handoffs.
+- `services/route-discovery`
+  FastAPI service for takedown route lookup and live route discovery.
+- `services/evidence`
+  FastAPI service for OCR, hashing, and artifact normalization.
+- `packages/shared`
+  Shared workflow types, seed data, and UI-facing contracts.
+
+## Development
+
+The intended root command is:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+That starts:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `apps/web` on `:3000`
+- `services/orchestrator` on `:4001`
+- `services/route-discovery` on `:4002`
+- `services/evidence` on `:4003`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Current status
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The monorepo structure, mock UI flow, CSV-backed route data, and FastAPI service shells are in place.

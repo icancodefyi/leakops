@@ -1,0 +1,9 @@
+{
+  "name": "@leakops/orchestrator",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "../../.venv/bin/uvicorn app.main:app --reload --port 4001",
+    "build": "../../.venv/bin/python -m compileall app"
+  }
+}
